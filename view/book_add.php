@@ -1,4 +1,9 @@
 <?php 
+
+/*En esta vista se agregan  y se muestran los productos almacenandolos en la base de datos 
+se incluyen las vistas header y menu que son las que traen los elementos del menu para 
+la navegacion del sistema asi como el fondo del mismo*/
+
 	include_once "header.php";
 	if($logged_in)
 	{
@@ -7,26 +12,35 @@
 ?>
 
 <?php
-		if($status=="before_submission" or $status=="failure")
-		{
+	if($status=="before_submission" or $status=="failure")
+	{
 ?>
 <br>
+
 	<div class="container">
 		<form method="post">
 			<div class="cuerpo">
 				<h3>Registrar un Nuevo Producto</h3>
 				<p>Llene los siguientes campos</p>
-				<label for="title">Producto</label>
+				<label for="title">Clave</label>
 				<input type="text" name="title" id="title" placeholder="Escriba aquí..." required>
 				<font color="red"><?php echo $errors["title"]; ?></font>
 				<br>
-				<label for="author">Descripcion</label>
+				<label for="author">Nombre</label>
 				<input type="text" name="author" id="author" placeholder="Escriba aquí..." required>
 				<font color="red"><?php echo $errors["author"]; ?></font>
 				<br>
-				<label for="description">Cantidad</label>
-				<input type="number" name="description" id="description" placeholder="Escriba aquí..." required>
+				<label for="description">Categoria</label>
+				<input type="text" name="description" id="description" placeholder="Escriba aquí..." required>
 				<font color="red"><?php echo $errors["description"]; ?></font>
+				<br>
+				<label for="precio">Precio</label>
+				<input type="number" name="precio" id="precio" placeholder="Escriba aquí..." required>
+				<font color="red"><?php echo $errors["precio"]; ?></font>
+				<br>
+				<label for="stock">Stock</label>
+				<input type="number" name="stock" id="stock" placeholder="Escriba aquí..." required>
+				<font color="red"><?php echo $errors["stock"]; ?></font>
 				<br>
 				<input type="hidden" name="page" value="book_add">
 				<input type="hidden" name="caller" value="self">
@@ -40,6 +54,7 @@
 		}
 		else
 		{
+			//mensaje que se muestra despues de guardar exitosamente el producto
 ?>
 <br>
 		<div class="container">

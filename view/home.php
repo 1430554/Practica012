@@ -1,4 +1,5 @@
 <?php 
+//Estilos traidos de header asi como fondo
 	include_once "header.php";
 	if($logged_in)
 	{
@@ -9,6 +10,7 @@
 	<br>
 	<div class="continer">
 		<div class="bienvenida">
+			<!-- Mensaje e instrucciones de bienvenida al iniciar el sistema -->
 			<h3>Bienvenido a la pagina de inicio.</h3>
 			<p>Seleccione alguna opcion del menú parac omenzar a trabajar</p>
 		</div>

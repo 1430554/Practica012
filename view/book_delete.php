@@ -1,16 +1,19 @@
 <?php 
+//Estilos traidos de header asi como fondo
 	include_once "header.php";
 	if($logged_in)
 	{
 		$after_login=true;
+		//Importacion del menu para navegacion del sistema
 		include_once "menu.php";
 ?>
 
 <?php
 		if($status=="before_submission" or $status=="failure")
 		{
+			//A continuacion se eliminan los productos imprimiendo con la funcion "echo" el nombre del preducto almacenado en la variable "$book" traido de la base de datos en el campo "title" y con "option value" se pregunta si realmente desea eliminar el producto asi mismo se toma el id de dicho producto y se elimina en la base de datos.
 ?>
-<br>
+<br> 
 	<div class="container">
 		<form method="post">
 			<div class="cuerpo">
@@ -25,6 +28,7 @@
 				<br>
 				<input type="hidden" name="page" value="book_delete">
 				<input type="hidden" name="caller" value="self">
+
 				<input type="hidden" name="id" value="<?php echo $book[0]["id"]; ?>">
 				<br>
 				<input class="btn btn-danger" type="submit" value="Borrar">
@@ -36,6 +40,7 @@
 		}
 		else
 		{
+			//despues de eliminar el producto se imprime el siguiente mensaje:
 ?>
 <br>
 <div class="container">
@@ -48,6 +53,7 @@
 	}
 	else
 	{
+		//El menu y el header requieren estar en todo momento del proceso para la navegacion del sistema
 		$before_login=true;
 		include_once "menu.php";
 ?>

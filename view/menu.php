@@ -31,10 +31,10 @@ if (isset($_GET['page'])) {
 }
 ?>
 <ul class="nav justify-content-center">
-	<li class="nav-item"><a href="index.php?page=home"><img src="view/images/logo.png"></a></li>
+	<li class="nav-item"><img src="view/images/logo.png"></li>
+	<li class="nav-item"><a class="nav-link <?php echo $productos; ?>" href="index.php?page=book_list">Inventario</a></li>
 	<li class="nav-item"><a class="nav-link <?php echo $perfil; ?>" href="index.php?page=profile">Perfil</a></li>
-	<li class="nav-item"><a class="nav-link <?php echo $addProd; ?>" href="index.php?page=book_add">Añadir Producto</a></li>
-	<li class="nav-item"><a class="nav-link <?php echo $productos; ?>" href="index.php?page=book_list">Productos</a></li>
+	
 	<?php 
 		if ($_SESSION['username'] == "admin") {
 		?>

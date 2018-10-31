@@ -79,6 +79,29 @@ class Controller
 		include_once "view/book_delete.php";
 	}
 
+	public function movi_add()
+	{
+		$logged_in=$this->model->logged_in();
+		$status=$this->model->movi_add($errors);
+		$precio=$this->model->get_precio();
+		include_once "view/movi_add.php";
+	}
+
+	public function movi_delete()
+	{
+		$logged_in=$this->model->logged_in();
+		$status=$this->model->movi_delete($errors);
+		$precio=$this->model->get_precio();
+		include_once "view/movi_delete.php";
+	}
+
+	public function movi_list()
+	{
+		$logged_in=$this->model->logged_in();
+		$movis=$this->model->movi_list();
+		include_once "view/movi_list.php";
+	}
+
 }
 
 ?>
